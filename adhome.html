@@ -1,0 +1,117 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+    {% block css %}
+
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+
+    {% endblock %}
+
+    {% block content %}
+
+
+        <table border=2>
+
+            <tr>
+                <th>Id</th>
+                <th>name</th>
+                <th>brand</th>
+                <th>fuel type</th>
+                <th>price per day</th>
+                <th>total seats</th>
+                <th>Availability Status </th>
+                <th>image</th>
+                <th>Edit</th>
+                <th>delete</th>
+            </tr>
+
+        {% for i in data %}
+            
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.fuel_type}}</td>
+                <td>{{i.price_per_day}}</td>
+                <td>{{i.seats}}</td>
+                <td>{{i.transmission}}</td>
+                <td>
+                {% if i.availability == True%}
+                    Available
+                {% else %}
+                    Not-Available
+                {% endif %}
+                </td>
+                <td><img src="{{i.image}}" alt=""></td>
+                <td><a href="{% url 'edit' i.id %}">Edit</a></td>
+                <td><a href="{% url 'delete' i.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+
+
+        </table>
+
+
+        <form method="POST">
+
+    {% csrf_token %}
+
+    <label>Car Name</label>
+    <input type="text" name="name" placeholder="Enter car name">
+
+    <br><br>
+
+    <label>Brand</label>
+    <input type="text" name="brand" placeholder="Enter brand name">
+
+    <br><br>
+
+    <label>Fuel Type</label>
+    <select name="fuel_type">
+        <option value="">Select Fuel Type</option>
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Electric">Electric</option>
+        <option value="CNG">CNG</option>
+    </select>
+
+    <br><br>
+
+    <label>Price Per Day</label>
+    <input type="number" name="price_per_day" placeholder="Enter price">
+
+    <br><br>
+
+    <label>Seats</label>
+    <input type="number" name="seats" value="4">
+
+    <br><br>
+
+    <label>Transmission</label>
+    <select name="transmission">
+        <option value="">Select Transmission</option>
+        <option value="Manual">Manual</option>
+        <option value="Automatic">Automatic</option>
+    </select>
+
+    <br><br>
+
+    <label>Image</label>
+    <input type="text" name="image" placeholder="Enter image path">
+
+    <br><br>
+
+    <label>Availability</label>
+    <input type="checkbox" name="availability" checked>
+
+    <br><br>
+
+    <button type="submit">Add Car</button>
+
+</form>
+
+
+
+    {% endblock %}
+
+

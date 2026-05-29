@@ -1,0 +1,59 @@
+{% extends 'main.html' %}
+{% load static %}
+
+    {% block css %}
+
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+
+    {% endblock %}
+
+    {% block content %}
+
+    <h1>Edit Panel</h1>
+
+
+    <div class="form-s">
+
+        
+       <form method="POST">
+            {% csrf_token %}
+
+            <label>Car Name</label>
+            <input type="text" name="name" value="{{ data.name }}">
+
+            <label>Brand</label>
+            <input type="text" name="brand" value="{{ data.brand }}">
+
+            <label>Fuel</label>
+            <input type="text" name="fuel_type" value="{{ data.fuel_type }}">
+
+            <label>Price Per Day</label>
+            <input type="number" name="price_per_day" value="{{ data.price_per_day }}">
+
+            <label>Status</label>
+            {% if data.availability == True %}
+                <input type="text" name="" value="Available">
+            {% else %}
+                <input type="text" name="" value="Not Available">
+            {% endif %}
+
+            <label for="">Edit Availability </label>
+            <div class="edit">
+             <input type="radio" name="availability" value="True"> Yes
+             <input type="radio" name="availability" value="False"> No 
+            </div>
+
+            <label>Transmission</label>
+            <input type="text" name="transmission" value="{{ data.transmission }}">
+
+            <label>Total Seats</label>
+            <input type="number" name="seats" value="{{ data.seats }}">
+
+            <button type="submit">Update</button>
+
+        </form>
+
+    </div>
+
+
+    {% endblock %}

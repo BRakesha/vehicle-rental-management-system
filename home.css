@@ -1,0 +1,231 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+}
+
+.admin{
+    position: fixed;
+    top: 0;
+    background-color: #000000;
+    h1{
+        text-align: left;
+        color: white;
+    }
+    width: 100%;
+    height: 10vh;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    .left,.right{
+        width: 50%;
+    }
+    a{
+        text-transform: uppercase;
+        color: white;
+        font-size: 15px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .right{
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+.main{
+    margin: 10vh auto;
+    padding: 10px;
+    height: 300vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .sub{
+        border: 1px solid black;
+        width: 25%;
+        height: 30%;
+        img{
+            padding: 10px;
+            width: 100%;
+            height: 50%;
+            box-shadow: 2px 2px 8px black;
+        }
+        h1,h2{
+            text-align: center;
+            font-family: cursive;
+            text-transform: uppercase;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    }
+}
+table{
+    text-transform: uppercase;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+    th{
+        background-color: aquamarine;
+        padding: 15px;
+    }
+    td{
+        text-align: center;
+        padding: 5px;
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    }
+    a{
+        display: block;
+        margin: auto;
+        border: 1px solid black;
+        text-decoration: none;
+        color: white;
+        background-color: rgb(15, 15, 210);
+        height: 80%;
+        width: 80%;
+        border-radius: 5px;
+    }
+}
+.form-s{
+    padding: 20px;
+    background-color: #76ABAE;
+    width: 30%;
+    margin:15vh auto;
+    box-shadow: 2px 2px 8px black;
+    input[type="text"],input[type="number"],label{
+        display: block;
+        margin: 1vh auto;
+        width: 50%;
+        height: 30px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 8px black;
+    }
+    label{
+        font-family: cursive;
+        text-transform: uppercase;
+        height: 20px;
+        box-shadow: none;
+    }
+    button{
+        border-radius: 5px;
+        text-transform: uppercase;
+        display: block;
+        margin: 2vh auto;
+        width: 100px;
+        height: 40px;
+    }
+    .edit{
+        width: 50%;
+        margin: 2vh auto;
+    }
+
+}
+.sub{
+     a{
+        text-align: center;
+        align-content: center;
+        display: block;
+        margin:2vh auto;
+        border: 1px solid black;
+        text-decoration: none;
+        color: white;
+        background-color: rgb(15, 15, 210);
+        border-radius: 5px;
+        width: 100px;
+        height:40px;
+    }
+}
+
+.form-box{
+    width:350px;
+    margin:15vh auto;
+    background:white;
+    padding:25px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.form-box h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+.form-box label{
+    display:block;
+    margin-top:12px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.form-box input{
+    width:100%;
+    padding:10px;
+    border:1px solid #bbb;
+    border-radius:5px;
+}
+
+.form-box button{
+    width:100%;
+    margin-top:20px;
+    padding:10px;
+    border:none;
+    background:#333;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.form-box button:hover{
+    background:#555;
+}
+
+   form{
+        width: 350px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    label{
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    input,
+    select{
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="checkbox"]{
+        width: auto;
+    }
+
+    button{
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background-color: black;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background-color: #333;
+    }
